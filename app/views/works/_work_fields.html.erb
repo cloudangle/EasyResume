@@ -1,0 +1,32 @@
+<div class="row">
+  <div class="input-field col s12">
+    <%= f.text_field :title, placeholder: 'Project XXXX', class: 'validate' %>
+    <%= f.label :title, 'Title' %>
+  </div>
+</div>
+<% f.fields_for :details do |builder| %>
+    <%= render 'details/detail_fields', f: builder %>
+<% end %>
+<div class="row">
+  <div class="right">
+    <%= button_to_add_fields "<i class=\"material-icons right\">library_add</i>Add".html_safe, f, :details %>
+  </div>
+</div>
+<form name="workdetaillist">
+  <label>Relevant Details</label>
+  <div name="details" class="noclass">
+    <div class="row">
+      <div class="input-field col s12">
+        <input name="workdetail" placeholder="This paper proposed a theory about....." type="text" class="validate">
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="right">
+      <a class="waves-effect waves-light btn" onclick="addWorkDetail(this)"><i class="material-icons right">library_add</i>Add</a>
+      <button class="btn waves-effect waves-light" type="submit" name="action">Save
+        <i class="material-icons right">system_update_alt</i>
+      </button>
+    </div>
+  </div>
+</form>

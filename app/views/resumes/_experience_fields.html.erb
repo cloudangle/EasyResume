@@ -1,0 +1,40 @@
+<div class="field">
+  <div class="section">
+    <div class="row">
+      <div class="input-field col s7">
+        <%= f.text_field :org, placeholder: 'XXXX Ltd.', class: 'validate' %>
+        <%= f.label :org, 'Organization', class: 'active' %>
+      </div>
+      <div class="input-field col s5">
+        <%= f.text_field :desc, placeholder: 'Back-end Developer', class: 'validate' %>
+        <%= f.label :desc, 'Job Description', class: 'active' %>
+      </div>
+    </div>
+    <div class="row">
+      <div class="input-field col s3">
+        <%= f.text_field :starttime, placeholder: 'July 2015', class: 'validate' %>
+        <%= f.label :starttime, 'Start Time', class: 'active' %>
+      </div>
+      <div class="input-field col s3">
+        <%= f.text_field :endtime, placeholder: 'Oct 2016', class: 'validate' %>
+        <%= f.label :endtime, 'End Time', class: 'active' %>
+      </div>
+      <div class="input-field col s6">
+        <%= f.text_field :location, placeholder: 'Guangzhou, Guangdong', class: 'validate' %>
+        <%= f.label :location, 'Location', class: 'active' %>
+      </div>
+    </div>
+    <h4 class="header center orange-text">Relevant Details</h4>
+    <%= f.fields_for :details do |builder| %>
+        <%= render 'detail_fields', f: builder %>
+    <% end %>
+    <div class="row">
+      <div class="right">
+        <%= button_to_add_fields "<i class=\"material-icons right\">library_add</i>Add".html_safe, f, :details, 'experience detail' %>
+        <%= button_to_remove_fields "<i class='material-icons right'>delete</i>Remove Entry".html_safe, f, 'experience' %>
+      </div>
+    </div>
+    <div class="container"><div class="divider"></div></div>
+  </div>
+</div>
+

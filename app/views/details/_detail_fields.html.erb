@@ -1,0 +1,11 @@
+<label>Relevant Details</label>
+<div class="field">
+  <div class="row">
+    <div class="input-field col s11">
+      <%= f.text_field :content, placeholder: 'Relevant course: XXXX', class: 'validate' %>
+    </div>
+    <div class="col s1">
+      <%= button_to_remove_fields "<i class=\"material-icons right\">delete</i>".html_safe, f %>
+    </div>
+  </div>
+</div>

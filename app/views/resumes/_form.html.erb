@@ -1,0 +1,63 @@
+<%= form_for @resume do |f| %>
+    <div id="basicinfo">
+      <h4 class="header orange-text">About This Resume</h4>
+      <div class="row">
+        <div class="input-field col s12">
+          <i class="material-icons prefix">label</i>
+          <%= f.text_field :resumeid, placeholder:'Resume XXX', maxlength: '20', onkeyup: 'typed()', :html => {:class => 'validate', :required => 'true'}, :data => {:length => '20'} %>
+          <%= f.label :resumeid, 'Resume ID' %>
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s12">
+          <i class="material-icons prefix">description</i>
+          <%= f.text_field :description, placeholder: 'This is a formal resume!', maxlength: '120', :html => {:class => 'validate'} %>
+          <%= f.label :description, 'Description' %>
+        </div>
+      </div>
+    </div>
+
+    <div id="selfintrodiv">
+      <h4 class="header orange-text">Self Introduction</h4>
+      <%= f.fields_for :selfintro do |builder| %>
+        <%= render 'selfintro_fields', f: builder %>
+      <% end %>
+    </div>
+
+    <div id="educationinfo">
+      <h4 class="header orange-text">Education</h4>
+      <%= f.fields_for :educations do |builder| %>
+        <%= render 'education_fields', f: builder %>
+      <% end %>
+      <div class="row">
+        <div>
+          <%= button_to_add_fields "<i class='material-icons right'>playlist_add</i>Add Education Information", f, :educations, 'education' %>
+        </div>
+      </div>
+    </div>
+
+    <div id="experienceinfo">
+      <h4 class="header orange-text">Experience</h4>
+      <%= f.fields_for :experiences do |builder| %>
+        <%= render 'experience_fields', f: builder %>
+      <% end %>
+      <div class="row">
+        <div>
+          <%= button_to_add_fields "<i class='material-icons right'>playlist_add</i>Add Experience Information", f, :experiences, 'experience' %>
+        </div>
+      </div>
+    </div>
+
+    <div id="workinfo">
+      <h4 class="header orange-text">Related Work & Technical Paper</h4>
+      <%= f.fields_for :works do |builder| %>
+        <%= render 'work_fields', f: builder %>
+      <% end %>
+      <div class="row">
+        <div>
+          <%= button_to_add_fields "<i class='material-icons right'>playlist_add</i>Add More Information", f, :works, 'work' %>
+        </div>
+      </div>
+    </div>
+
+<% end %>

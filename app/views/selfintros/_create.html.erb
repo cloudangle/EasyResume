@@ -1,0 +1,16 @@
+<%= form_for [@resume, @resume.build_selfintro], :url => resume_selfintro_path(@resume), remote: true do |f| %>
+    <div class="row">
+      <div class="input-field col s12">
+        <%= f.text_area :content, :id => 'selfintro', :class => 'materialize-textarea', :placeholder => 'I am a superman!' %>
+      </div>
+    </div>
+    <div class="row">
+      <div class="right">
+        <a class="waves-effect waves-light btn" id="editselfintro" onclick="enableSelfIntro()"><i class="material-icons right">mode_edit</i>Edit</a>
+        <a class="waves-effect waves-light btn" id="clearselfintro" onclick="clearSelfIntro()"><i class="material-icons right">clear_all</i>Clear</a>
+        <%= content_tag :button, :type => :submit, :class => 'btn waves-effect waves-light' do %>
+            Save<i class="material-icons right">system_update_alt</i>
+        <% end %>
+      </div>
+    </div>
+<% end %>

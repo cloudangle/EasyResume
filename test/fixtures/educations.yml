@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  university: MyString
+  major: MyString
+  enrolledtime: MyString
+  gradtime: MyString
+  location: MyString
+  resume: one
+
+two:
+  university: MyString
+  major: MyString
+  enrolledtime: MyString
+  gradtime: MyString
+  location: MyString
+  resume: two

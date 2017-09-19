@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0"/>
+  <title>Event Input</title>
+
+  <!-- CSS  -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.1/css/materialize.min.css">
+
+  <style>
+    /* Custom Stylesheet */
+    /**
+     * Use this file to override Materialize files so you can update
+     * the core Materialize files in the future
+     *
+     * Made By MaterializeCSS.com
+     */
+
+    #desktopmenulist{
+      margin-right: 10px;
+    }
+
+    .icon-block {
+      padding: 0 15px;
+    }
+    .icon-block .material-icons {
+      font-size: inherit;
+    }
+
+    .log1 {
+      max-width: 12em;
+      height: 2em;
+      display: inline-block;
+      margin: auto;
+      margin-top: 1.0em;
+      border-radius: 0px;
+    }
+    /**
+    #map-container {
+        height: 800px;
+        width: 100%;
+    }
+
+    @media only screen and (min-height: 1300px) {
+        #map-container {
+            height: 1200px;
+        }
+    }
+
+    @media only screen and (min-width: 993px) {
+        #map-container {
+            height: 800px;
+        }
+    }
+    */
+
+
+
+
+    /* Footer Wrap */
+
+    #footwrap {
+      width: 100%;
+      height: 50px;
+      background: #3f51b5;
+      position: fixed;
+      bottom: 0px;
+    }
+
+    html,body{
+      height:100%;
+    }
+
+
+
+
+
+    .material-icons.md-dark { color: rgba(0, 0, 0, 0.54); }
+    .material-icons.md-dark.md-inactive { color: #424242; }
+
+
+    #map-container {
+      width:100%;
+      height:calc(100% - 105px);
+      position:absolute;
+      right:0px;
+      top:55px;
+      bottom: 50px;
+    }
+    #centericon {
+      font-size: medium;
+    }
+    #centerUI {
+      box-shadow: 0 2px 6px rgba(0,0,0,.3);
+    }
+
+
+    #maptypeControlDiv {
+      margin-bottom: 0px;
+      margin-left: 10px;
+    }
+
+    #centerControlDiv {
+      margin-bottom: 42px;
+    }
+    #centerText {
+      text-align: center;
+    }
+
+    #gpsControlDiv {
+      margin-bottom: 70px;
+      margin-right: 0;
+    }
+
+
+
+    /*
+    county layer legend
+     */
+    #googft-legend {
+      background-color:#fff;
+      font-size:12px;margin:5px;
+      padding:10px 10px 8px;
+      position: fixed;
+      right: 10px;
+      display: inline;
+    }
+
+    @media only screen and (max-width: 420px) {
+      #googft-legend{
+        display: none;
+      }
+    }
+
+    #googft-legend p {
+      font-weight:bold;
+      margin-top:0
+    }
+    #googft-legend div {
+      margin-bottom:5px
+    }
+    .googft-legend-swatch {
+      float:left;
+      height:12px;
+      margin-right:8px;
+      width:20px
+    }
+    .googft-legend-range{
+      margin-left:0
+    }
+
+
+    #legendButtonText {
+      margin-right: 30px;
+    }
+
+
+    #legendButton {
+      position: fixed;
+      right: 23px;
+      top: 275px;
+      height: 60px;
+    }
+
+
+
+    #layerControl {
+      position: fixed;
+      left: 10px;
+      bottom: 130px;
+      padding-top: 0px;
+      padding-bottom: 5px;
+      padding-left: 10px;
+      padding-right: 10px;
+      display: inline;
+    }
+
+    @media only screen and (max-width: 420px) {
+      #layerControl{
+        display: none;
+      }
+    }
+
+    #searchInputCard {
+      margin-left: 10px;
+      margin-top: 5px;
+      width: calc(100% - 20px);
+      padding: 0px;
+      padding-top: 0px;
+      position: fixed;
+    }
+
+    #pac-input {
+      background: white;
+      margin: 0px;
+      margin-top: -10px;
+      margin-left: 0px;
+      text-overflow: ellipsis;
+    }
+    @media only screen and (min-width: 420px) {
+      #pac-input{
+        width: 380px;
+      }
+      #searchInputCard {
+        width: 440px;
+      }
+    }
+
+
+    #searchIcon{
+      margin-left: 0px;
+    }
+
+    #searchText {
+      padding: 0px;
+    }
+    #closeicon {
+      font-size: 24px;
+    }
+    #searchinput {
+      margin-top: 0px;
+    }
+
+    #searchControlDiv{
+      width: calc(100% - 20px);
+    }
+
+    @media only screen and (min-width: 420px) {
+      #searchControlDiv{
+        width: 380px;
+      }
+    }
+
+
+    @media only screen and (max-width: 420px) {
+      #logo-container{
+        display: none;
+      }
+      #logo-container2{
+        display: inline;
+      }
+    }
+    @media only screen and (min-width: 420px) {
+      #logo-container{
+        display: inline;
+      }
+      #logo-container2{
+        display: none;
+      }
+    }
+
+
+
+
+
+    /*
+    feedback.html
+     */
+    #feedbackdiv{
+      margin-top: 30px;
+    }
+    #feedbacksubmitbutton{
+      margin-top: 20px;
+    }
+
+    #feedbackfootwrap {
+      width: 100%;
+      height: 50px;
+      background: #3f51b5;
+      position: fixed;
+      bottom: 0px;
+    }
+
+
+
+
+  </style>
+</head>
+
+
+
+<body>
+<!-- Dropdown Structure -->
+<ul id="dropdown1" class="dropdown-content">
+  <% @resumes.each do |res| %>
+      <li><%= link_to res.resumeid, resume_path(res) %></li>
+  <% end %>
+</ul>
+<nav class="nav-extended">
+  <div class="nav-wrapper">
+    <ul class="right hide-on-med-and-down">
+      <li><%= link_to 'Start a new resume', new_resume_path %></li>
+      <li><%= link_to 'Edit This Resume', edit_resume_path(@resume) %></li>
+      <!-- Dropdown Trigger -->
+      <li><a class="dropdown-button" href="#!" data-activates="dropdown1">Saved Resumes<i class="material-icons right">arrow_drop_down</i></a></li>
+    </ul>
+  </div>
+</nav>
+
+
+<div class="container">
+  <div class="row">
+    <div class="col s12 m9 l10">
+      <br><br>
+      <div class="row">
+        <h1 class="header left col s12 orange-text">Zhuolun Liu</h1>
+        <h6 class="header left col s12" style="font-size: 1.2rem">Cell:  <span class="tel"><strong>(352)281-4841</strong></span></h6>
+        <h6 class="header left col s12" style="font-size: 1.2rem">Email:  <a class="email" href="mailto:cloudangle844@gmail.com">cloudangle844@gmail.com</a></h6>
+      </div>
+
+
+      <div class="section">
+        <div id="selfintrodiv" class="section scrollspy">
+          <h3 class="header orange-text">About Me</h3>
+          <p class="caption">
+            <p style="font-size: 1.25rem" id="selfintrocontent"><%= @resume.selfintro.content %></p>
+          </p>
+        </div>
+      </div>
+
+      <div class="divider"></div>
+
+      <div class="section">
+        <div id="educationinfo" class="section scrollspy">
+          <h3 class="header orange-text">Education</h3>
+
+
+          <% @resume.educations.each_with_index do |edu, idx| %>
+            <% unless idx == 0 %>
+              <div class="container"><div class="divider"></div></div>
+            <% end %>
+
+            <%= render partial: 'educations/education', locals: {education: edu} %>
+          <% end %>
+
+        </div>
+      </div>
+
+      <div class="divider"></div>
+
+      <div class="section">
+        <div id="experienceinfo" class="section scrollspy">
+          <h4 class="header orange-text">Experience</h4>
+          <% @resume.experiences.each_with_index do |exp, idx| %>
+              <% unless idx == 0 %>
+                  <div class="container"><div class="divider"></div></div>
+              <% end %>
+
+              <%= render partial: 'experiences/experience', locals: {exp: exp} %>
+          <% end %>
+        </div>
+      </div>
+
+      <div class="divider"></div>
+
+      <div class="section">
+        <div id="workinfo" class="section scrollspy">
+          <h4 class="header orange-text">Related Work & Technical Paper</h4>
+          <% @resume.works.each_with_index do |work, idx| %>
+              <% unless idx == 0 %>
+                  <div class="container"><div class="divider"></div></div>
+              <% end %>
+
+              <%= render partial: 'works/work', locals: {work: work} %>
+          <% end %>
+        </div>
+      </div>
+
+
+
+    </div>
+
+
+    <div class="col hide-on-small-only m3 l2">
+      <div class="toc-wrapper pinned" style="top: 300px;">
+        <ul class="section table-of-contents">
+          <li><a href="#selfintrodiv" class="active"><span style="font-size: 1.5rem">Self Introduction</span></a></li>
+          <li><a href="#educationinfo"><span style="font-size: 1.5rem">Educations</span></a></li>
+          <li><a href="#experienceinfo"><span style="font-size: 1.5rem">Experiences</span></a></li>
+          <li><a href="#workinfo"><span style="font-size: 1.5rem">Related Works & Papers</span></a></li>
+        </ul>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+<footer class="page-footer orange">
+  <div class="footer-copyright">
+    <div class="container">
+      Made with <a class="orange-text text-lighten-3" href="http://materializecss.com">Materialize</a >
+    </div>
+  </div>
+</footer>
+
+
+<!--  Scripts-->
+<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.1/js/materialize.min.js"></script>
+
+<!--  Scripts
+<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+<script src="../static/js/materialize.js"></script>
+<script src="../static/js/init.js"></script>
+-->
+
+
+<script>
+    (function($){
+        $(function(){
+
+            $('.button-collapse').sideNav();
+
+        }); // end of document ready
+    })(jQuery); // end of jQuery name space
+
+    $(document).ready(function() {
+        $('select').material_select();
+        $('.scrollspy').scrollSpy({
+            scrollOffset: 0
+        });
+    });
+
+    $('.datepicker').pickadate({
+        selectMonths: true, // Creates a dropdown to control month
+        selectYears: 10, // Creates a dropdown of 15 years to control year
+        formatSubmit: 'yyyy/mm/dd',
+    });
+
+    $(function(){
+        var element = $("#selfintrocontent");
+        var temp =  element.text().replace(/\n/g,'<br/>');
+        element.html(temp);
+    });
+
+
+</script>
+
+</body>
+</html>

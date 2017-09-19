@@ -1,0 +1,50 @@
+<div class="row">
+  <div class="input-field col s7">
+    <%= f.text_field :org, placeholder: 'XXXX Ltd.', class: 'validate' %>
+    <%= f.label :org, 'Organization' %>
+  </div>
+  <div class="input-field col s5">
+    <%= f.text_field :desc, placeholder: 'Back-end Developer', class: 'validate' %>
+    <%= f.label :desc, 'Job Description' %>
+  </div>
+</div>
+<div class="row">
+  <div class="input-field col s3">
+    <%= f.text_field :starttime, placeholder: 'July 2015', class: 'validate' %>
+    <%= f.label :starttime, 'Start Time' %>
+  </div>
+  <div class="input-field col s3">
+    <%= f.text_field :endtime, placeholder: 'Oct 2016', class: 'validate' %>
+    <%= f.label :endtime, 'End Time' %>
+  </div>
+  <div class="input-field col s6">
+    <%= f.text_field :location, placeholder: 'Guangzhou, Guangdong', class: 'validate' %>
+    <%= f.label :location, 'Location' %>
+  </div>
+</div>
+<% f.fields_for :details do |builder| %>
+    <%= render 'details/detail_fields', f: builder %>
+<% end %>
+<div class="row">
+  <div class="right">
+    <%= button_to_add_fields "<i class=\"material-icons right\">library_add</i>Add".html_safe, f, :details %>
+  </div>
+</div>
+<form name="jobdetaillist">
+  <label>Relevant Details</label>
+  <div name="details" class="noclass">
+    <div class="row">
+      <div class="input-field col s12">
+        <input name="jobdetail" placeholder="Developed XXX system...." type="text" class="validate">
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="right">
+      <a class="waves-effect waves-light btn" onclick="addExpDetail(this)"><i class="material-icons right">library_add</i>Add</a>
+      <button class="btn waves-effect waves-light" type="submit" name="action">Save
+        <i class="material-icons right">system_update_alt</i>
+      </button>
+    </div>
+  </div>
+</form>

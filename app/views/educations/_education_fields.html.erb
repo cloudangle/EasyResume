@@ -1,0 +1,37 @@
+<div class="row">
+  <div class="input-field col s7">
+    <%= f.text_field :university, placeholder: 'University of Florida', class: 'validate' %>
+    <%= f.label :university, 'University' %>
+  </div>
+  <div class="input-field col s5">
+    <%= f.text_field :major, placeholder: 'Computer Science', class: 'validate' %>
+    <%= f.label :major, 'Major' %>
+  </div>
+</div>
+<div class="row">
+  <div class="input-field col s3">
+    <%= f.text_field :enrolledtime, placeholder: 'Sept 2012', class: 'validate' %>
+    <%= f.label :enrolledtime, 'Enrolled Time' %>
+  </div>
+  <div class="input-field col s3">
+    <%= f.text_field :gradtime, placeholder: 'June 2016', class: 'validate' %>
+    <%= f.label :gradtime, 'Graduate Time' %>
+  </div>
+  <div class="input-field col s6">
+    <%= f.text_field :location, placeholder: 'Guangzhou, Guangdong', class: 'validate' %>
+    <%= f.label :location, 'Location' %>
+  </div>
+</div>
+<% f.fields_for :details do |builder| %>
+  <%= render 'details/detail_fields', f: builder %>
+<% end %>
+<div class="row">
+  <div class="right">
+    <%= button_to_add_fields "<i class=\"material-icons right\">library_add</i>Add".html_safe, f, :details %>
+  </div>
+</div>
+<div class="right">
+  <button class="btn waves-effect waves-light" type="submit" name="action">Save All Education Info
+    <i class="material-icons right">system_update_alt</i>
+  </button>
+</div>

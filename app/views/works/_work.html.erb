@@ -1,0 +1,14 @@
+<div class="section">
+  <blockquote>
+    <div class="row">
+      <h6 class="header left col s12" style="font-size: 1.3rem"><strong><%= work.title %></strong></h6>
+    </div>
+  </blockquote>
+  <% if work.details %>
+      <div class="row">
+        <% work.details.each do |detail| %>
+            <p><i class="material-icons left">chevron_right</i><%= detail.content %></p>
+        <% end %>
+      </div>
+  <% end %>
+</div>

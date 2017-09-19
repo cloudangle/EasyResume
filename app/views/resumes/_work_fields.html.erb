@@ -1,0 +1,22 @@
+<div class="field">
+  <div class="section">
+    <div class="row">
+      <div class="input-field col s12">
+        <%= f.text_field :title, placeholder: 'Project XXXX', class: 'validate' %>
+        <%= f.label :title, 'Title', class: 'active' %>
+      </div>
+    </div>
+    <h4 class="header center orange-text">Relevant Details</h4>
+    <%= f.fields_for :details do |builder| %>
+        <%= render 'detail_fields', f: builder %>
+    <% end %>
+    <div class="row">
+      <div class="right">
+        <%= button_to_add_fields "<i class=\"material-icons right\">library_add</i>Add".html_safe, f, :details, 'work detail' %>
+        <%= button_to_remove_fields "<i class='material-icons right'>delete</i>Remove Entry".html_safe, f, 'work' %>
+      </div>
+    </div>
+    <div class="container"><div class="divider"></div></div>
+  </div>
+</div>
+
